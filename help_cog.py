@@ -13,7 +13,7 @@ command list:
 !queue/!q displays the current music queue
 !skip skip the current song
 !clear stops the music and clears the queue
-!disconnect disconnect the bot from the voice channel 
+!disconnect/!dc disconnect the bot from the voice channel 
 !pause pauses the current song being played
 !resume resumes playing the current song
 ```
