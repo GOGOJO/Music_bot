@@ -12,7 +12,6 @@ class music_cog(commands.Cog):
             'format': "bestaudio",
             'postprocessors': [{
                 'key': 'FFmpegExtractAudio',
-                'preferredcodec': 'mp3',
                 'preferredquality': '192',
             }],
         }
@@ -133,9 +132,12 @@ class music_cog(commands.Cog):
         else:
             await ctx.send("No music in queue")
 
-    @commands.command()
+    @commands.command(aliases=["c"])
     async def clear(self, ctx):
-        pass
+        if self.vc != None and self.is_playing:
+            self.vc.stop()
+        self.music_queue = []
+        await ctx.send("Music queue cleared")
 
 
 async def setup(bot):
