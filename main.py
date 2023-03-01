@@ -2,6 +2,7 @@ import discord
 from itertools import cycle
 from discord.ext import commands, tasks
 import asyncio
+import tokens
 
 
 
@@ -32,7 +33,7 @@ async def main():
     async with client:
         await client.load_extension('music_cog')
         await client.load_extension('help_cog')
-        await client.start('MTA3OTk0Nzc2NzMzOTgxNDk2Mg.GO9vVs.SrxbA3_L7_OThc1epzYyLepfTiVHychn6tbJho')
+        await client.start(tokens.token)
 
 asyncio.run(main())
 
